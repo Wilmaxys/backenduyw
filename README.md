@@ -8,3 +8,4 @@
 6. Reload the project for maven dependency download
 7. Pray the app won't crash
 8. Run it
+9. (Optionnal) Look at my picture at the tower of london.
