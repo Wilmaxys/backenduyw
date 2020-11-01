@@ -84,7 +84,7 @@ public class AuthController {
 
 		// Create new user's account
 		User user = new User(loginRequest.getUsername(),
-							 "test@test.com",
+				loginRequest.getUsername() + "@test.com",
 							 encoder.encode(loginRequest.getPassword()));
 
 		Set<Role> roles = new HashSet<>();

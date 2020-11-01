@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.formation.uywback.models.game.GameUser;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -108,6 +109,10 @@ public class User {
 	}
 
 	public void addGameUser(fr.formation.uywback.models.game.GameUser gameUser) {
+		if(GameUser == null){
+			GameUser = new ArrayList<>();
+		}
+
 		this.GameUser.add(gameUser);
 	}
 }
