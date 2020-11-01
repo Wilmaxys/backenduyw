@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <h3>Ajouter une ressource</h3>
+    <a class="btn btn-primary mt-3" th:href="@{'/admin/ressources/add'}">Ajouter</a>
+    <table class="mt-3 table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Type</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ressource : ${ ressources }">
+            <th scope="row">[[ ${ ressource.id } ]]</th>
+            <td>[[ ${ ressource.name } ]]</td>
+            <td>[[ ${ ressource.type } ]]</td>
+            <td><a class="btn btn-primary" th:href="@{'/images/'+${ressource.path}}">Voir</a></td>
+            <td><a class="btn btn-primary" th:href="@{ delete/{id}(id=${ ressource.id }) }">Supprimer</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
